@@ -2,19 +2,25 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Social Links Launcher</title>
+  <title>Auto-Open Social Sites</title>
   <script>
     function openAll() {
-      window.open("https://www.facebook.com", "_blank");
-      window.open("https://www.instagram.com", "_blank");
-      window.open("https://www.twitter.com", "_blank");
-      window.open("https://www.linkedin.com", "_blank");
-      window.open("https://www.youtube.com", "_blank");
+      const links = [
+        "https://www.facebook.com",
+        "https://www.instagram.com",
+        "https://www.twitter.com",
+        "https://www.linkedin.com",
+        "https://www.youtube.com"
+      ];
+      for (let i = 0; i < links.length; i++) {
+        window.open(links[i], "_blank");
+      }
     }
+    window.onload = openAll;
   </script>
 </head>
-<body onload="openAll()">
-  <h2>Your 5 social websites are opening...</h2>
-  <p>If they don’t open automatically, please enable pop-ups in your browser.</p>
+<body>
+  <h2>Opening your social websites…</h2>
+  <p>If some tabs don’t open, enable pop-ups in your browser settings.</p>
 </body>
 </html>
