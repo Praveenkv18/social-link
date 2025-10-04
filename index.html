@@ -2,29 +2,27 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Sequential Redirect</title>
-  <style>body{font-family:Arial;text-align:center;padding:50px}</style>
+  <title>Open All Socials</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align:center; padding:60px; }
+    button { padding:18px 30px; font-size:18px; border-radius:8px; cursor:pointer; }
+  </style>
 </head>
 <body>
-  <h2>Viewing social sites one after another</h2>
-  <p>Tap the button to start. The page will navigate through each site in the current tab.</p>
-  <button id="start">Start</button>
+  <h2>Tap to open all social sites</h2>
+  <p>Tap once and your browser will open each site in a new tab.</p>
+  <button id="openBtn">Open all social sites</button>
 
   <script>
-    const links = [
-      'https://www.facebook.com',
-      'https://www.instagram.com',
-      'https://www.twitter.com',
-      'https://www.linkedin.com',
-      'https://www.youtube.com'
-    ];
-    document.getElementById('start').addEventListener('click', async () => {
-      for (let i=0;i<links.length;i++){
-        // navigate to link, wait some seconds, then return to here if you host a wrapper on each site — otherwise navigation is final
-        window.location.href = links[i];
-        // NOTE: once you navigate away, the script stops running in this page.
-        // Alternative: open in same tab and let user press Back to return.
-      }
+    document.getElementById('openBtn').addEventListener('click', function () {
+      const links = [
+        'https://www.facebook.com',
+        'https://www.instagram.com',
+        'https://www.twitter.com',
+        'https://www.linkedin.com',
+        'https://www.youtube.com'
+      ];
+      for (let url of links) { window.open(url, '_blank'); }
     });
   </script>
 </body>
