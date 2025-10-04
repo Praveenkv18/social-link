@@ -1,29 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Open All Socials</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align:center; padding:60px; }
-    button { padding:18px 30px; font-size:18px; border-radius:8px; cursor:pointer; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Auto-Open QR Links</title>
+  <script>
+    function openAll() {
+      const links = [
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=2977&promptId=17",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=2977&promptId=16",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=2977&promptId=15",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=2977&promptId=14",
+        "https://aiskillshouse.com/student/qr-mediator.html?uid=2977&promptId=13"
+      ];
+      for (let i = 0; i < links.length; i++) {
+        window.open(links[i], "_blank");
+      }
+    }
+    window.onload = openAll;
+  </script>
 </head>
 <body>
-  <h2>Tap to open all social sites</h2>
-  <p>Tap once and your browser will open each site in a new tab.</p>
-  <button id="openBtn">Open all social sites</button>
-
-  <script>
-    document.getElementById('openBtn').addEventListener('click', function () {
-      const links = [
-        'https://www.facebook.com',
-        'https://www.instagram.com',
-        'https://www.twitter.com',
-        'https://www.linkedin.com',
-        'https://www.youtube.com'
-      ];
-      for (let url of links) { window.open(url, '_blank'); }
-    });
-  </script>
+  <h2>Opening your 5 QR links…</h2>
+  <p>If only one opens, please enable pop-ups in your browser to allow all tabs.</p>
 </body>
 </html>
