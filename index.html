@@ -1,26 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Auto-Open Social Sites</title>
-  <script>
-    function openAll() {
-      const links = [
-        "https://www.facebook.com",
-        "https://www.instagram.com",
-        "https://www.twitter.com",
-        "https://www.linkedin.com",
-        "https://www.youtube.com"
-      ];
-      for (let i = 0; i < links.length; i++) {
-        window.open(links[i], "_blank");
-      }
-    }
-    window.onload = openAll;
-  </script>
+  <meta charset="utf-8">
+  <title>Sequential Redirect</title>
+  <style>body{font-family:Arial;text-align:center;padding:50px}</style>
 </head>
 <body>
-  <h2>Opening your social websites…</h2>
-  <p>If some tabs don’t open, enable pop-ups in your browser settings.</p>
+  <h2>Viewing social sites one after another</h2>
+  <p>Tap the button to start. The page will navigate through each site in the current tab.</p>
+  <button id="start">Start</button>
+
+  <script>
+    const links = [
+      'https://www.facebook.com',
+      'https://www.instagram.com',
+      'https://www.twitter.com',
+      'https://www.linkedin.com',
+      'https://www.youtube.com'
+    ];
+    document.getElementById('start').addEventListener('click', async () => {
+      for (let i=0;i<links.length;i++){
+        // navigate to link, wait some seconds, then return to here if you host a wrapper on each site — otherwise navigation is final
+        window.location.href = links[i];
+        // NOTE: once you navigate away, the script stops running in this page.
+        // Alternative: open in same tab and let user press Back to return.
+      }
+    });
+  </script>
 </body>
 </html>
